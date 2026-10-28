@@ -1,0 +1,118 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Noto Serif', ui-serif, Georgia, serif;
+  --font-display: 'DM Serif Display', ui-serif, Georgia, serif;
+  --font-script: 'Mrs Saint Delafield', cursive;
+
+  --color-page: #f8f7f4;
+  --color-page-mobile: #fbf8f5;
+  --color-ink: #343434;
+  --color-body: #414141;
+  --color-muted: #7c7c7c;
+  --color-subtle: #686868;
+  --color-line: #e6e6e6;
+  --color-field: #f1f1f1;
+
+  --color-brand: #ff8c1a;
+  --color-brand-strong: #e67300;
+  --color-brand-deep: #b35900;
+  --color-brand-brown: #683400;
+  --color-brand-title: #804000;
+  --color-brand-soft: #ffeedd;
+  --color-brand-softer: #fff2e5;
+  --color-brand-ring: #ffd9b3;
+
+  --color-teal: #146a65;
+  --color-teal-soft: #ccf1ec;
+  --color-teal-line: #87beb9;
+  --color-teal-fab: #179883;
+  --color-teal-from: #16796d;
+  --color-teal-to: #072a25;
+
+  --color-tag: #e1eff7;
+  --color-tag-ink: #007425;
+  --color-online: #1ed90d;
+  --color-badge: #d4183d;
+
+  --animate-fade-up: fade-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-pop: pop 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-sheet: sheet 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-heart: heart 0.35s ease-out;
+  --animate-fade: fade 0.2s ease-out both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  @keyframes sheet {
+    from {
+      opacity: 0;
+      transform: translateY(16px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  @keyframes heart {
+    0% {
+      transform: scale(1);
+    }
+    40% {
+      transform: scale(1.35);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  @apply bg-page font-sans text-ink;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
